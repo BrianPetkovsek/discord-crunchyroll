@@ -109,14 +109,3 @@ app.on('ready', () => {
 app.on('window-all-closed', () => {
     app.quit();
 });
-
-app.on('new-window', (event, url) => {
-  var hostname = (new URL(url)).hostname.toLowerCase();
-
-  if (hostname.indexOf('dropbox.com') !== -1 && url.indexOf('chooser') !== -1) {
-    // this should allow open window
-  } else {
-
-    event.preventDefault();
-  } 
-})
